@@ -3,18 +3,14 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/quiz">Quiz</router-link>
       {{ ROLES }}
-      <select
-         name=""
-         id=""
-      >
+      <select @change="startQuiz">
+         <option value="null">Null</option>
          <option
             v-for="(value, key) in ROLES"
-            :value="item"
-            :key="item"
+            :value="key"
+            :key="key"
          >
-            value:{{ value }}
-            <br />
-            key:{{ key }}
+            {{ value }}
          </option>
       </select>
    </nav>
@@ -43,6 +39,9 @@ export default {
          "GET_QUESTIONS",
          // "NAME"
       ]),
+      startQuiz(e) {
+         console.log(e);
+      },
    },
    watch: {},
    created() {},
