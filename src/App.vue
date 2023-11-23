@@ -2,6 +2,21 @@
    <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/quiz">Quiz</router-link>
+      {{ ROLES }}
+      <select
+         name=""
+         id=""
+      >
+         <option
+            v-for="(value, key) in ROLES"
+            :value="item"
+            :key="item"
+         >
+            value:{{ value }}
+            <br />
+            key:{{ key }}
+         </option>
+      </select>
    </nav>
    <router-view />
 </template>
