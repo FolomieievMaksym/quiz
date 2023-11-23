@@ -1,15 +1,11 @@
 <template>
-   <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/quiz">Quiz</router-link>
-   </nav>
-   <router-view />
+   <div class="quiz">Quiz</div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
-   name: "App",
+   name: "QuizView",
    components: {},
    props: {},
    data() {
@@ -17,25 +13,20 @@ export default {
    },
    computed: {
       ...mapGetters([
-         "ROLES",
-         "QUESTIONS",
+         // "NAME",
          // "NAME"
       ]),
    },
    methods: {
       ...mapActions([
-         "GET_ROLES",
-         "GET_QUESTIONS",
+         // "NAME",
          // "NAME"
       ]),
    },
    watch: {},
    created() {},
    beforeMount() {},
-   mounted() {
-      this.GET_ROLES();
-      this.GET_QUESTIONS();
-   },
+   mounted() {},
    beforeUnmount() {},
    unmounted() {},
    beforeUpdate() {},
@@ -43,4 +34,7 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.quiz {
+}
+</style>
